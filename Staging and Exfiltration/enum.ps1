@@ -4,10 +4,10 @@
 # User discretion is greatly advised.
 
 # Create the directory to save files to.
-mkdir \Temp\enum 2>&1
+New-Item -ItemType Directory -Path 'C:\Temp\enum' -Force | Out-Null
 
 # Show the current user, and their groups and privileges.
-whoami /all > C:\Temp\enum\users.txt 2>&1
+whoami /all > C:\Temp\enum\user.txt 2>&1
 
 # Show all running processes.
 tasklist > C:\Temp\enum\processes.txt 2>&1
@@ -16,10 +16,10 @@ tasklist > C:\Temp\enum\processes.txt 2>&1
 netstat -ano > C:\Temp\enum\connections.txt 2>&1
 
 # Show running services.
-sc query > C:\Temp\enum\services.txt 2>&1
+sc.exe query > C:\Temp\enum\services.txt 2>&1
 
 # Show all local user accounts.
-net user > C:\Temp\enum\users.txt 2>&1
+net user > C:\Temp\enum\all_users.txt 2>&1
 
 # Show all local groups.
 net localgroup > C:\Temp\enum\groups.txt 2>&1
