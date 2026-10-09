@@ -36,7 +36,8 @@ netsh advfirewall show allprofiles > C:\Temp\enum\firewall.txt 2>&1
 # Show the ARP table.
 arp -a > C:\Temp\enum\arp.txt 2>&1
 
-# List SMB sessions.
+# List SMB sessions. This command requires administrator priveleges to run, so it causes
+# the whole file to have to be run as administrator.
 net session > C:\Temp\enum\smb.txt 2>&1
 
 # Show various system information.
